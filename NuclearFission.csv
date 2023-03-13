@@ -1,0 +1,19 @@
+Quantity,Value
+No of neutrons,100000
+238 U,139
+235 U,1
+,
+For >=2MeV:,
+238 sig_i,2.87
+238 sig_f,0.6
+235 sig_i,2.3
+235 sig_f,1.3
+,
+For >=1.2MeV:,
+238 sig_i,0.5
+238 sig_f,0
+235 sig_i,0.7
+235 sig_f,1.3
+,
+235 U repr factor,2.5
+238 U repr factor,2.9
