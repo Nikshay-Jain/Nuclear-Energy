@@ -65,7 +65,6 @@ def kna(x):
     eta = (2.42*sigf235*n235 + 2.9*sigf238*n238)/(n235*(siga235) + n238*(siga238))
     f = (n235*(siga235) + n238*(siga238))/(n235*(siga235) + n238*(siga238) + no*sigao + nna*sigana + nzr*sigazr)
     eps = (1+(0.690*n238/nna))/(1+(0.563*n238/nna))
-    
     # zi_bar = (n235*sigs235*0.0085 + n238*sigs238*0.0084 + nna*sigsna*0.8 + nzr*sigszr*0.02182 + no*sigso*0.121)/(n235*sigs235 + n238*sigs238 + nna*sigsna + nzr*sigszr + no*sigso)
     # sig = (n235*sigs235 + n238*sigs238 + nna*sigsna + nzr*sigszr + no*sigso)
     # p = np.exp((-2.73/zi_bar)*((sig/n238)**-0.514))
@@ -73,21 +72,21 @@ def kna(x):
     print(eps,eta,f,k)
     return k
 
-x = np.arange(0.001,150,0.001)
+x = np.arange(0.001,200,0.001)
 for i in x:
-    if kh2o(i)-1.3<=0.0001:
+    if abs(kh2o(i)-1.3) <= 0.001:
         plt.plot(i,kh2o(i), marker = 'o')
         plt.text(i, kh2o(i), '({}, {})'.format(i, kh2o(i)))
         break
 
 for i in x:
-    if kd2o(i)-1.2<=0.0001:
+    if abs(kd2o(i)-1.2) <= 0.001:
         plt.plot(i,kd2o(i), marker = 'o')
         plt.text(i, kd2o(i), '({}, {})'.format(i, kd2o(i)))
         break
 
 for i in x:
-    if (kna(i)-1.25) <= 0.0001:
+    if abs(kna(i)-1.25) <= 0.001:
         plt.plot(i,kna(i), marker = 'o')
         plt.text(i, kna(i), '({}, {})'.format(i, kna(i)))
         break
