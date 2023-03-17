@@ -91,12 +91,10 @@ for i in x:
         plt.text(i, kna(i), '({}, {})'.format(i, kna(i)))
         break
 
+plt.title("k vs x plot")
 plt.xlabel("x")
 plt.ylabel("k")
 plt.plot(x,kh2o(x))
 plt.plot(x,kd2o(x))
 plt.plot(x,kna(x))
 plt.show()
-
-# x = float(input("Enter x if U235 : U238 = 1:x\n"))
-# kna(x)
